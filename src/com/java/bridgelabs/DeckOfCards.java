@@ -1,19 +1,13 @@
 package com.java.bridgelabs;
 
 import java.util.Random;
+/*
+    SUITS = "Clubs", "Diamonds", "Hearts", "Spades"
+    RANKS = "2", "3", "4", "5", "6", "7", "8", "9", "10","Jack", "Queen", "King", "Ace"
+*/
 
 public class DeckOfCards
 {
-    public static void main(String[] args) {
-
-        DeckOfCards deckOfCards = new DeckOfCards();
-
-        for (int playerNumber = 1; playerNumber <= 4; playerNumber++) {
-            deckOfCards.DistributeCards(playerNumber);
-            System.out.println("Player "  + playerNumber + "'s cards:");
-            deckOfCards.showCards(playerNumber);
-        }
-    }
     int[][] cards = new int[4][13];
 
     void DistributeCards(int playerNumber) {
@@ -91,6 +85,17 @@ public class DeckOfCards
                 return "Spades";
             default:
                 return "";
+        }
+    }
+
+    public static void main(String[] args) {
+
+        DeckOfCards deckOfCards = new DeckOfCards();
+
+        for (int playerNumber = 1; playerNumber <= 4; playerNumber++) {
+            deckOfCards.DistributeCards(playerNumber);
+            System.out.println("Player "  + playerNumber + "'s cards:");
+            deckOfCards.showCards(playerNumber);
         }
     }
 }
